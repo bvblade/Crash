@@ -8,6 +8,9 @@ TagManager:
   - Spike
   - Enemy
   - Pit
+  - Crate
+  - crateTop
+  - stompBox
   layers:
   - Default
   - TransparentFX
