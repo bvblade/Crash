@@ -26,19 +26,26 @@ public class PlayerController : MonoBehaviour
     // bool variable that tells fixed update when to jump
     private bool jump = false;
     // true, the player can attack, false, the player 
-    private bool attackCooldown;
+    private bool attackCooldown = true;
+
+    private Vector3 spawn;
+
+    public Material attackingMaterial;
+    private Material defaultMaterial;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = transform.GetComponent<Rigidbody>();
-        
+        defaultMaterial = GetComponent<Renderer>().material;
+        // set the spawn point
+        spawn = transform.GetChild(1).transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         movement();
-
+        attack();
         // fires a ray from the center of the player downwards 1.15 meters
         // returns true if it hits something
         // returns False if it doesnt hit anything
@@ -69,8 +76,10 @@ public class PlayerController : MonoBehaviour
             jump = false;
         }
     }
+    // calls the coroutine to attack
     private void attack()
     {
+        // if the player presses E and the attack cooldown has ended then attack
         if (Input.GetKeyDown(KeyCode.E) && attackCooldown)
         {
             StartCoroutine(onEPress());
@@ -107,19 +116,58 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // if the player touches a Wumpa, add 1 wumpa
         if (other.CompareTag("Wumpa"))
         {
             wumpas++;
             other.gameObject.SetActive(false);
         }
+        // if the player touches an enemy and they are not attacking, respawn them
         if (other.CompareTag("Enemy"))
         {
-            lives--;
+            if (isAttacking)
+            {
+                Debug.Log("Killed an enemy");
+                other.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Hit an enemy");
+                respawn();
+            }
+            
         }
+        // if the player touches a spike, respawn them
         if (other.CompareTag("Spike"))
         {
-            lives--;
+            Debug.Log("Hit a spike");
+            respawn();
         }
+        // if the player touches a pit, respawn them
+        if (other.CompareTag("Pit"))
+        {
+            Debug.Log("Hit the endless pit");
+            respawn();
+        }
+        // if the player hits the top of a crate, bounce them
+        if (other.CompareTag("crateTop"))
+        {
+            // bounce the player half of the jump height
+            rigidbody.AddForce(Vector3.up * jumpForce/2, ForceMode.Impulse);
+        }
+        // if the player hits the top of an enemy, bounce them
+        if (other.CompareTag("stompBox"))
+        {
+            // bounce the player half of the jump height
+            rigidbody.AddForce(Vector3.up * jumpForce/2, ForceMode.Impulse);
+        }
+    }
+
+    // removes one life and returns the player to the spawnpoint set at the start of the level
+    private void respawn()
+    {
+        lives--;
+        transform.position = spawn;
     }
 
     // when you press E, you attack and turn red for 1 second and the attack has a cooldown of .5 seconds after you are done attacking
@@ -130,13 +178,18 @@ public class PlayerController : MonoBehaviour
         // says the player is attacking
         isAttacking = true;
         Debug.Log("Player is attacking");
+        // change the player material to the attacking material
+        transform.GetComponent<Renderer>().material = attackingMaterial;
         // wait for 1 seconds
         yield return new WaitForSeconds(1f);
         // player is no longer attacking
         isAttacking = false;
+        // change the material back to the default material
+        transform.GetComponent<Renderer>().material = defaultMaterial;
         Debug.Log("Player is not attacking");
         // wait for 0.5 seconds
         yield return new WaitForSeconds(0.5f);
+        Debug.Log("Player can attack again");
         // player can attack again
         attackCooldown = true;
     }
