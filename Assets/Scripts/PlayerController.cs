@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // the rigidbody component
     Rigidbody rigidbody;
     // determines whether or not the player is attacking or not
-    private bool isAttacking;
+    public bool isAttacking;
     // if the player is grounded they can jump
     public bool isGrounded = false;
     // bool variable that tells fixed update when to jump
