@@ -5,31 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class PortalBehavior : MonoBehaviour
 {
-    // Player gameObject
     public GameObject player;
     // Variable to handle what scene the player will go to next
     public int newSceneIndex;
 
-    GameObject[] playerObjects;
+     GameObject[] playerObjects;
 
     // happens before the start function
     private void Awake()
     {
         // array of player objects
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
+
         if (playerObjects.Length > 1)
         {
+            player = playerObjects[1];
             // destroy the player that is assigned
             Destroy(player);
         }
         else
         {
+            // dont want to destroy the following: player
             DontDestroyOnLoad(player);
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PortalBehavior : MonoBehaviour
         {
             DontDestroyOnLoad(other);
         }
+        switchScene();
     }
 
     public void switchScene()

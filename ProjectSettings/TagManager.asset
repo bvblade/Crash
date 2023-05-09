@@ -11,6 +11,8 @@ TagManager:
   - Crate
   - crateTop
   - stompBox
+  - Canvas
+  - unstablePlatform
   layers:
   - Default
   - TransparentFX

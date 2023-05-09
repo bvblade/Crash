@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 // [Brough, Heath]
 // [5/2/2023]
 // controls all the functions of the player
-// updated [5/8/2023]
+// updated [5/9/2023]
 
 public class PlayerController : MonoBehaviour
 {
-    public Text livesText;
-    public Text wumpasText;
+    [SerializeField]
+    private Text livesText;
+    [SerializeField]
+    private Text wumpasText;
+    private GameObject Canvas;
     
     // how fast the player goes
     public float moveSpeed;
@@ -45,6 +48,11 @@ public class PlayerController : MonoBehaviour
         defaultMaterial = GetComponent<Renderer>().material;
         // set the spawn point
         spawn = transform.GetChild(1).transform.position;
+        // access the canvas
+        Canvas = GameObject.FindGameObjectWithTag("Canvas");
+
+        livesText = Canvas.transform.GetChild(0).GetComponent<Text>();
+        wumpasText = Canvas.transform.GetChild(1).GetComponent<Text>();
     }
 
     // Update is called once per frame
