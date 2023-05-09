@@ -16,7 +16,7 @@ public class CrateBehavior : MonoBehaviour
     private void OnDisable()
     {
         
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < numberOfWumpas; i++)
         {
             // spawn 5 wumpas at the crate location
             Instantiate(wumpaPrefab, transform.position, transform.rotation);
