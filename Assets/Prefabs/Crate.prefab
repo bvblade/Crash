@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 135216388536014795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.497, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.0661914, z: 0.9}
+  m_LocalScale: {x: 0.5, y: 0.22767194, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6835739739153967337}
   m_RootOrder: 0
@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 7110584358379564560}
   - component: {fileID: 7980977603180907187}
   - component: {fileID: 6423722410513221989}
+  - component: {fileID: 6839456328139104209}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Crate
@@ -154,3 +155,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6839456328139104209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614733737599393114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b750cde69bc364f948e30331cc5c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wumpaPrefab: {fileID: 3520196026666273245, guid: b2eca0acca8c24547b9dfe1d3f4efb12, type: 3}
+  numberOfWumpas: 5

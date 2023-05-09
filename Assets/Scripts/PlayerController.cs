@@ -5,6 +5,7 @@ using UnityEngine;
 // [Brough, Heath]
 // [5/2/2023]
 // controls all the functions of the player
+// updated [5/8/2023]
 
 public class PlayerController : MonoBehaviour
 {
@@ -119,8 +120,11 @@ public class PlayerController : MonoBehaviour
         // if the player touches a Wumpa, add 1 wumpa
         if (other.CompareTag("Wumpa"))
         {
+
+
             wumpas++;
-            other.gameObject.SetActive(false);
+            // destroy the wumpas when you collect them
+            Destroy(other.gameObject);
         }
         // if the player touches an enemy and they are not attacking, respawn them
         if (other.CompareTag("Enemy"))
@@ -152,14 +156,18 @@ public class PlayerController : MonoBehaviour
         // if the player hits the top of a crate, bounce them
         if (other.CompareTag("crateTop"))
         {
-            // bounce the player half of the jump height
-            rigidbody.AddForce(Vector3.up * jumpForce/2, ForceMode.Impulse);
+            // bounce the player 
+            rigidbody.AddForce(Vector3.up * jumpForce * 1.7f, ForceMode.Impulse);
+            // set the parent of the crateTop (the crate) inactive
+            other.gameObject.transform.parent.gameObject.SetActive(false);
         }
         // if the player hits the top of an enemy, bounce them
         if (other.CompareTag("stompBox"))
         {
-            // bounce the player half of the jump height
-            rigidbody.AddForce(Vector3.up * jumpForce/2, ForceMode.Impulse);
+            // bounce the player 
+            rigidbody.AddForce(Vector3.up * jumpForce * 1.7f, ForceMode.Impulse);
+            // set the parent of the stompBox (the enemy) inactive
+            other.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 
