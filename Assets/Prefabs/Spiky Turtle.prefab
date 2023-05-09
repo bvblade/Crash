@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6171245696610044501}
   m_Layer: 0
   m_Name: Right Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f492ca0264cb61b4eb6d8937930680c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   leftPoint: {fileID: 6650457699763551023}
   rightPoint: {fileID: 1059703931929928294}
   rightHead: {fileID: 1215214195396351410}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 5909484397209341801}
   m_Layer: 0
   m_Name: Left Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
