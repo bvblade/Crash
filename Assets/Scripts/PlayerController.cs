@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // [Brough, Heath]
 // [5/2/2023]
@@ -9,6 +11,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Text livesText;
+    public Text wumpasText;
+    
     // how fast the player goes
     public float moveSpeed;
     // how many lives the player has
@@ -125,6 +130,7 @@ public class PlayerController : MonoBehaviour
             wumpas++;
             // destroy the wumpas when you collect them
             Destroy(other.gameObject);
+            wumpasText.text = "Wumpas: " + wumpas.ToString();
         }
         // if the player touches an enemy and they are not attacking, respawn them
         if (other.CompareTag("Enemy"))
@@ -141,6 +147,12 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+        //If player is attacking crate while touching it, then it disappears
+        if (other.CompareTag("Crate") && isAttacking)
+        {
+            other.gameObject.SetActive(false);
+        }
+
         // if the player touches a spike, respawn them
         if (other.CompareTag("Spike"))
         {
@@ -176,6 +188,7 @@ public class PlayerController : MonoBehaviour
     {
         lives--;
         transform.position = spawn;
+        livesText.text = "Lives: " + lives.ToString();
     }
 
     // when you press E, you attack and turn red for 1 second and the attack has a cooldown of .5 seconds after you are done attacking

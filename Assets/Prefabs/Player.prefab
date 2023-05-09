@@ -225,12 +225,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42206c70199aa34b89e0c1051d49901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  livesText: {fileID: 0}
+  wumpasText: {fileID: 0}
   moveSpeed: 5
-  lives: 0
+  lives: 3
   wumpas: 0
   jumpForce: 7
   isAttacking: 0
   isGrounded: 0
+  attackingMaterial: {fileID: 2100000, guid: 3418aaeb33f5d464f851259e3da54073, type: 2}
 --- !u!54 &521890703
 Rigidbody:
   m_ObjectHideFlags: 0
