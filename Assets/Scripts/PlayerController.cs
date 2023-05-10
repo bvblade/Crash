@@ -11,10 +11,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private Text livesText;
-    [SerializeField]
-    private Text wumpasText;
+    public Text livesText;
+    public Text wumpasText;
     private GameObject Canvas;
     
     // how fast the player goes
@@ -50,9 +48,6 @@ public class PlayerController : MonoBehaviour
         spawn = transform.GetChild(1).transform.position;
         // access the canvas
         Canvas = GameObject.FindGameObjectWithTag("Canvas");
-
-        livesText = Canvas.transform.GetChild(0).GetComponent<Text>();
-        wumpasText = Canvas.transform.GetChild(1).GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -158,7 +153,7 @@ public class PlayerController : MonoBehaviour
         //If player is attacking crate while touching it, then it disappears
         if (other.CompareTag("Crate") && isAttacking)
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
 
         // if the player touches a spike, respawn them
@@ -178,8 +173,9 @@ public class PlayerController : MonoBehaviour
         {
             // bounce the player 
             rigidbody.AddForce(Vector3.up * jumpForce * 1.7f, ForceMode.Impulse);
-            // set the parent of the crateTop (the crate) inactive
-            other.gameObject.transform.parent.gameObject.SetActive(false);
+            // destroy the parent of the crateTop (the crate)
+            Destroy(other.gameObject.transform.parent.gameObject);
+            
         }
         // if the player hits the top of an enemy, bounce them
         if (other.CompareTag("stompBox"))

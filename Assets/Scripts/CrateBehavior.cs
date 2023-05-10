@@ -13,7 +13,7 @@ public class CrateBehavior : MonoBehaviour
     public int numberOfWumpas = 5;
     
     // when the crate is disabled, spawn wumpas
-    private void OnDisable()
+    private void OnDestroy()
     {
         
         for (int i = 0; i < numberOfWumpas; i++)
