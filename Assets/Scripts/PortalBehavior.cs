@@ -32,27 +32,19 @@ public class PortalBehavior : MonoBehaviour
             DontDestroyOnLoad(player);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
+        // saves the player when they swap scenes
         if (other.CompareTag("Player"))
         {
             DontDestroyOnLoad(other);
         }
+        // swap the scene
         switchScene();
     }
-
+    
+    // switches the scene to the specified scene
     public void switchScene()
     {
         // will load the build idnex that we set newSceneIndex to in unity
