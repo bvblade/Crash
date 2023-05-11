@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Valdez, Logan]
+ * Date: [05/09/2023]
+ * [Controls the enemy's behaviour]
+ */
+
 public class EnemyBehaviour : MonoBehaviour
 {
     //Speed Controller

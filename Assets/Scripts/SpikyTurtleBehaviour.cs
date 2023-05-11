@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Valdez, Logan]
+ * Date: [05/09/2023]
+ * [Controls the spiky turtle's behaviour]
+ */
+
 public class SpikyTurtleBehaviour : MonoBehaviour
 {
     //Speed Controller

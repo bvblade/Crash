@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// [Brough, Heath]
-// [5/8/2023]
-// rotates wumpas and moves them up and down
+/*
+ * Author: [Valdez, Logan]
+ * Date: [05/08/2023]
+ * [makes the wumpas rotate]
+ */
 
 public class WumpaRotator : MonoBehaviour
 {
