@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PortalBehavior : MonoBehaviour
 {
     public GameObject player;
+    public GameObject canvas;
     // Variable to handle what scene the player will go to next
     public int newSceneIndex;
 
@@ -14,6 +15,8 @@ public class PortalBehavior : MonoBehaviour
     // happens before the start function
     private void Awake()
     {
+        DontDestroyOnLoad(canvas);
+
         // array of player objects
         GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
 
@@ -32,7 +35,7 @@ public class PortalBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
