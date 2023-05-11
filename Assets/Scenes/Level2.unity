@@ -986,11 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399036183234372367, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 4
-=======
-      value: 11
->>>>>>> parent of d0e887b (more stuff)
       objectReference: {fileID: 0}
     - target: {fileID: 399036183234372367, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1066,14 +1062,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-<<<<<<< HEAD
-=======
---- !u!4 &1349640591 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7454935786946987587, guid: b2eca0acca8c24547b9dfe1d3f4efb12, type: 3}
-  m_PrefabInstance: {fileID: 1828868474}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of d0e887b (more stuff)
 --- !u!1001 &1359186586
 PrefabInstance:
   m_ObjectHideFlags: 0

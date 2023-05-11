@@ -33,20 +33,6 @@ public class PortalBehavior : MonoBehaviour
             DontDestroyOnLoad(player);
         }
     }
-<<<<<<< HEAD
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
->>>>>>> parent of d0e887b (more stuff)
 
     private void OnTriggerEnter(Collider other)
     {
