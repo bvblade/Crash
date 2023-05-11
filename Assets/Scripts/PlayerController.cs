@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Text wumpasText;
     public Text gameOver;
+    public Text winText;
     private GameObject Canvas;
-    
+
     // how fast the player goes
     public float moveSpeed;
     // how many lives the player has
@@ -55,13 +56,20 @@ public class PlayerController : MonoBehaviour
         livesText = Canvas.transform.GetChild(0).GetComponent<Text>();
         wumpasText = Canvas.transform.GetChild(1).GetComponent<Text>();
 
-        
+
     }
+
+    private void OnLevelWasLoaded(int leve2)
+    {
+        spawn = transform.GetChild(1).transform.position;
+    }
+    
 
     // Update is called once per frame
     void Update()
     {
         gameOver.enabled = false;
+        winText.enabled = false;
 
         movement();
         attack();
@@ -135,11 +143,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Win"))
+        {
+            this.enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
+            winText.enabled = true;
+        }
         // if the player touches a Wumpa, add 1 wumpa
         if (other.CompareTag("Wumpa"))
         {
-
-
             wumpas++;
             // destroy the wumpas when you collect them
             Destroy(other.gameObject);

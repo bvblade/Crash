@@ -1997,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906678846661834498, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.16
+      value: -11.44
       objectReference: {fileID: 0}
     - target: {fileID: 2906678846661834498, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2031,6 +2031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5981639215451548501, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 1427009322}
     - target: {fileID: 5981639215451548501, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: gameOver
       value: 
@@ -2283,6 +2287,17 @@ PrefabInstance:
 --- !u!114 &1427009321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2312005938631285806, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
+  m_PrefabInstance: {fileID: 1427009320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1427009322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1682452845783246293, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
   m_PrefabInstance: {fileID: 1427009320}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

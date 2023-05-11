@@ -13,6 +13,7 @@ TagManager:
   - stompBox
   - Canvas
   - unstablePlatform
+  - Win
   layers:
   - Default
   - TransparentFX
