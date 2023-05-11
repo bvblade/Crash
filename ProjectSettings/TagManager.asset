@@ -14,6 +14,8 @@ TagManager:
   - Canvas
   - unstablePlatform
   - Win
+  - speedStrip
+  - arrowStopPoint
   layers:
   - Default
   - TransparentFX
