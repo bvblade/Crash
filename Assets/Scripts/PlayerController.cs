@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Text livesText;
     [SerializeField]
     private Text wumpasText;
+    public Text gameOver;
     private GameObject Canvas;
     
     // how fast the player goes
@@ -53,11 +54,15 @@ public class PlayerController : MonoBehaviour
 
         livesText = Canvas.transform.GetChild(0).GetComponent<Text>();
         wumpasText = Canvas.transform.GetChild(1).GetComponent<Text>();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameOver.enabled = false;
+
         movement();
         attack();
         // fires a ray from the center of the player downwards 1.15 meters
@@ -197,6 +202,14 @@ public class PlayerController : MonoBehaviour
         lives--;
         transform.position = spawn;
         livesText.text = "Lives: " + lives.ToString();
+        if (lives <= 0)
+        {
+            //deactivates this script component
+            this.enabled = false;
+            //disables the objects renderer
+            GetComponent<MeshRenderer>().enabled = false;
+            gameOver.enabled = true;
+        }
     }
 
     // when you press E, you attack and turn red for 1 second and the attack has a cooldown of .5 seconds after you are done attacking

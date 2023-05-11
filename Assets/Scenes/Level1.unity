@@ -1065,6 +1065,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1245799114}
+    - target: {fileID: 8171337731280653762, guid: 11ded21618cf27446a18d119016a986b, type: 3}
+      propertyPath: newSceneIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ded21618cf27446a18d119016a986b, type: 3}
 --- !u!1 &505178450
@@ -1993,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906678846661834498, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.334547
+      value: -11.76
       objectReference: {fileID: 0}
     - target: {fileID: 2906678846661834498, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2027,6 +2031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5981639215451548501, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 1427009321}
     - target: {fileID: 5981639215451548501, guid: bed17f7b95f2fd048b4fe06c8277df71, type: 3}
       propertyPath: livesText
       value: 
@@ -2263,6 +2271,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
+--- !u!114 &1427009321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2312005938631285806, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
+  m_PrefabInstance: {fileID: 1427009320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1430853809
 GameObject:
   m_ObjectHideFlags: 0
