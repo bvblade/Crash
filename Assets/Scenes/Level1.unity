@@ -2243,10 +2243,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 399036182295448824, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_Text
-      value: 'Wumpas: '
-      objectReference: {fileID: 0}
     - target: {fileID: 399036183234372363, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
       propertyPath: m_Name
       value: Canvas
