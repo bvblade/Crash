@@ -68,6 +68,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        livesText.text = "Lives: " + lives.ToString();
+        wumpasText.text = "Wumpas: " + wumpas.ToString();
+        
         gameOver.enabled = false;
         winText.enabled = false;
 
@@ -89,6 +92,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jump = true;
+        }
+
+        if (wumpas >= 100)
+        {
+            lives++;
+            wumpas = wumpas - 100;
         }
     }
 
@@ -155,7 +164,7 @@ public class PlayerController : MonoBehaviour
             wumpas++;
             // destroy the wumpas when you collect them
             Destroy(other.gameObject);
-            wumpasText.text = "Wumpas: " + wumpas.ToString();
+            
         }
         // if the player touches an enemy and they are not attacking, respawn them
         if (other.CompareTag("Enemy"))
@@ -213,7 +222,7 @@ public class PlayerController : MonoBehaviour
     {
         lives--;
         transform.position = spawn;
-        livesText.text = "Lives: " + lives.ToString();
+       
         if (lives <= 0)
         {
             //deactivates this script component
