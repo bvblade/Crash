@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //this updates the spawn point between each scene so the player respaws at the right spot
     private void OnLevelWasLoaded(int leve2)
     {
         spawn = transform.GetChild(1).transform.position;
@@ -68,9 +69,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //updates the text for the UI in the top left corner
         livesText.text = "Lives: " + lives.ToString();
         wumpasText.text = "Wumpas: " + wumpas.ToString();
         
+        //makes sure the win and loss text are invisible until updated to need them
         gameOver.enabled = false;
         winText.enabled = false;
 
@@ -94,6 +97,7 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
+        //if the player gets 100 wumpas then you get an extra life
         if (wumpas >= 100)
         {
             lives++;
@@ -152,6 +156,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //this is the wind condition when the player walks into the win cube
         if (other.CompareTag("Win"))
         {
             this.enabled = false;
@@ -220,6 +225,7 @@ public class PlayerController : MonoBehaviour
     // removes one life and returns the player to the spawnpoint set at the start of the level
     private void respawn()
     {
+        //subtracts a life and then spawns player back at the spawn point
         lives--;
         transform.position = spawn;
        
