@@ -2243,17 +2243,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 399036183234372361, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 399036183234372361, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 399036183234372361, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
+    - target: {fileID: 399036182295448824, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
+      propertyPath: m_Text
+      value: 'Wumpas: '
       objectReference: {fileID: 0}
     - target: {fileID: 399036183234372363, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
       propertyPath: m_Name
@@ -2342,14 +2334,6 @@ PrefabInstance:
     - target: {fileID: 399036183234372367, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1897107008555746172, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3203880003601886306, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53c9539d462daf94b9da441c0f07732d, type: 3}
